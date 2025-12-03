@@ -950,6 +950,11 @@ st.markdown("""
         transition: all 0.3s ease;
         font-weight: 500;
         padding: 10px 15px;
+        font-size: 1rem !important;
+        letter-spacing: normal !important;
+        text-transform: none !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
     }
     
     .stNumberInput>div>div>input:hover {
@@ -989,6 +994,44 @@ st.markdown("""
         color: #1f2937 !important;
         font-size: 1.15rem !important;
         line-height: 1.7 !important;
+    }
+    
+    /* Fix text elongation and ensure proper display */
+    input, select, textarea {
+        font-size: 1rem !important;
+        letter-spacing: normal !important;
+        text-transform: none !important;
+        font-stretch: normal !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* Ensure selectbox displays selected value correctly */
+    [data-baseweb="select"] > div {
+        color: #1f2937 !important;
+        font-size: 1rem !important;
+        letter-spacing: normal !important;
+    }
+    
+    [data-baseweb="select"] > div > div {
+        color: #1f2937 !important;
+        font-size: 1rem !important;
+        white-space: nowrap !important;
+        overflow: visible !important;
+        text-overflow: clip !important;
+    }
+    
+    /* Force selected value text to be visible */
+    [data-baseweb="select"] > div > div > div,
+    [data-baseweb="select"] > div > div > div > div,
+    [data-baseweb="select"] span,
+    [data-baseweb="select"] > div > div > div > span {
+        color: #1f2937 !important;
+        font-size: 1rem !important;
+        font-weight: 500 !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        display: block !important;
     }
     
     h1, h2, h3, h4, h5, h6 {
@@ -1542,6 +1585,86 @@ st.markdown("""
         padding: 8px 12px !important;
         box-shadow: 0 2px 8px rgba(34, 197, 94, 0.2) !important;
         transition: all 0.3s ease !important;
+        font-size: 1rem !important;
+        letter-spacing: normal !important;
+        text-transform: none !important;
+        white-space: nowrap !important;
+        overflow: visible !important;
+        text-overflow: clip !important;
+    }
+    
+    /* Ensure selectbox selected value displays correctly - ALL NESTED ELEMENTS */
+    .stSelectbox>div>div>div,
+    .stSelectbox>div>div>div>div,
+    .stSelectbox>div>div>div>div>div,
+    .stSelectbox>div>div>div>div>div>div,
+    .stSelectbox span,
+    .stSelectbox>div>div span,
+    .stSelectbox>div>div>div span,
+    .stSelectbox>div>div>div>div span,
+    .stSelectbox * {
+        color: #1f2937 !important;
+        font-size: 1rem !important;
+        letter-spacing: normal !important;
+        text-transform: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        font-weight: 500 !important;
+    }
+    
+    /* Force BaseWeb select value to be visible */
+    [data-baseweb="select"] *,
+    [data-baseweb="select"] > div *,
+    [data-baseweb="select"] > div > div *,
+    [data-baseweb="select"] > div > div > div *,
+    [data-baseweb="select"] > div > div > div > div * {
+        color: #1f2937 !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+    
+    /* CRITICAL: Force the value display container to show text */
+    [data-baseweb="select"] > div > div:first-child,
+    [data-baseweb="select"] > div[role="combobox"],
+    [data-baseweb="select"] > div[role="combobox"] > div:first-child {
+        color: #1f2937 !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        min-height: 20px !important;
+    }
+    
+    /* Ensure any span or div with text content is visible */
+    [data-baseweb="select"] > div > div > span,
+    [data-baseweb="select"] > div > div > div > span,
+    [data-baseweb="select"] span:not(:empty) {
+        color: #1f2937 !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        display: inline-block !important;
+        font-size: 1rem !important;
+        font-weight: 500 !important;
+    }
+    
+    /* Target the specific BaseWeb value display element */
+    [data-baseweb="select"] > div[data-baseweb="select"] > div,
+    [data-baseweb="select"] > div > div[role="combobox"],
+    [data-baseweb="select"] > div > div[role="combobox"] > div,
+    [data-baseweb="select"] > div > div[role="combobox"] > div > div {
+        color: #1f2937 !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+    
+    /* Fix text input fields */
+    .stTextInput>div>div>input {
+        font-size: 1rem !important;
+        letter-spacing: normal !important;
+        text-transform: none !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        color: #1f2937 !important;
     }
     
     .stSelectbox>div>div:hover {
@@ -1733,6 +1856,61 @@ st.markdown("""
         color: #1f2937 !important;
         border: 2px solid rgba(134, 239, 172, 0.5) !important;
         border-radius: 12px !important;
+    }
+    
+    /* CRITICAL: Force ALL text in selectbox to be visible - target every possible element */
+    [data-baseweb="select"] *,
+    [data-baseweb="select"] > div *,
+    [data-baseweb="select"] > div > div *,
+    [data-baseweb="select"] > div > div > div *,
+    [data-baseweb="select"] > div > div > div > div *,
+    [data-baseweb="select"] > div > div > div > div > div * {
+        color: #1f2937 !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+    
+    /* Ensure the selected value text is visible in the selectbox */
+    [data-baseweb="select"] > div > div[data-baseweb="select"],
+    [data-baseweb="select"] > div > div[role="combobox"],
+    [data-baseweb="select"] > div > div[role="combobox"] > div {
+        color: #1f2937 !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+    
+    [data-baseweb="select"] > div > div > div[aria-selected="true"],
+    [data-baseweb="select"] > div > div > div[aria-selected="false"],
+    [data-baseweb="select"] > div > div > div > div,
+    [data-baseweb="select"] > div > div > div > div > div {
+        color: #1f2937 !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+    
+    /* Target the actual text content - ALL POSSIBLE NESTED STRUCTURES */
+    [data-baseweb="select"] > div > div > div > div > div,
+    [data-baseweb="select"] > div > div > div > div > div > span,
+    [data-baseweb="select"] > div > div > div > div > span,
+    [data-baseweb="select"] > div > div > div > span,
+    [data-baseweb="select"] > div > div > span,
+    [data-baseweb="select"] > div > span,
+    [data-baseweb="select"] span {
+        color: #1f2937 !important;
+        font-size: 1rem !important;
+        font-weight: 500 !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        display: inline-block !important;
+    }
+    
+    /* Force text nodes to be visible */
+    [data-baseweb="select"]::before,
+    [data-baseweb="select"] > div::before,
+    [data-baseweb="select"] > div > div::before {
+        color: #1f2937 !important;
     }
     
     /* Dropdown popover - FIX Z-INDEX AND STYLING */
@@ -2185,7 +2363,7 @@ st.markdown("""
             document.body.style.opacity = '1';
         }, 100);
         
-        // FIX DROPDOWN OVERLAPPING - Ensure proper z-index
+        // FIX DROPDOWN OVERLAPPING - Ensure proper z-index AND VISIBLE SELECTED VALUES
         function fixDropdownZIndex() {
             // Find all selectboxes and their popovers
             const selectboxes = document.querySelectorAll('[data-baseweb="select"]');
@@ -2194,6 +2372,25 @@ st.markdown("""
             selectboxes.forEach((selectbox, index) => {
                 selectbox.style.position = 'relative';
                 selectbox.style.zIndex = (1000 + index).toString();
+                
+                // Ensure selected value is visible
+                const selectValue = selectbox.querySelector('div[aria-selected="true"], div[aria-selected="false"]');
+                if (selectValue) {
+                    selectValue.style.color = '#1f2937';
+                    selectValue.style.opacity = '1';
+                    selectValue.style.visibility = 'visible';
+                }
+                
+                // Find and style all text elements inside the selectbox
+                const textElements = selectbox.querySelectorAll('span, div');
+                textElements.forEach(el => {
+                    if (el.textContent && el.textContent.trim() !== '') {
+                        el.style.color = '#1f2937';
+                        el.style.opacity = '1';
+                        el.style.visibility = 'visible';
+                        el.style.display = 'inline-block';
+                    }
+                });
             });
             
             popovers.forEach((popover, index) => {
@@ -2230,12 +2427,367 @@ st.markdown("""
             });
         }
         
+        // Function to get selected value from Streamlit widget state
+        function getStreamlitWidgetValue(widgetId) {
+            try {
+                // Try to access Streamlit's widget state
+                if (window.parent && window.parent.streamlit && window.parent.streamlit.widgetState) {
+                    const state = window.parent.streamlit.widgetState;
+                    if (state[widgetId]) {
+                        return state[widgetId].value;
+                    }
+                }
+                // Try alternative method
+                if (window.streamlit && window.streamlit.widgetState) {
+                    const state = window.streamlit.widgetState;
+                    if (state[widgetId]) {
+                        return state[widgetId].value;
+                    }
+                }
+            } catch (e) {
+                console.log('Could not access Streamlit state:', e);
+            }
+            return null;
+        }
+        
+        // Function to get selected option text from dropdown list
+        function getSelectedOptionText(selectbox) {
+            // Method 1: Check the popover for selected option
+            const popover = document.querySelector('[data-baseweb="popover"]');
+            if (popover) {
+                const selectedOption = popover.querySelector('[aria-selected="true"], [role="option"][aria-selected="true"], li[aria-selected="true"]');
+                if (selectedOption) {
+                    const optionText = selectedOption.textContent?.trim();
+                    if (optionText && optionText !== '') {
+                        return optionText;
+                    }
+                }
+            }
+            
+            // Method 2: Check all option elements in the selectbox
+            const allOptions = selectbox.querySelectorAll('[role="option"], li[role="option"], div[role="option"]');
+            for (let option of allOptions) {
+                if (option.getAttribute('aria-selected') === 'true' || 
+                    option.classList.contains('selected') ||
+                    option.getAttribute('data-selected') === 'true') {
+                    const optionText = option.textContent?.trim();
+                    if (optionText && optionText !== '') {
+                        return optionText;
+                    }
+                }
+            }
+            
+            // Method 3: Try to find the selectbox's associated select element
+            const stSelectbox = selectbox.closest('.stSelectbox');
+            if (stSelectbox) {
+                // Look for hidden input or data attribute
+                const hiddenInput = stSelectbox.querySelector('input[type="hidden"]');
+                if (hiddenInput && hiddenInput.value) {
+                    // Try to find the option with this value
+                    const optionWithValue = Array.from(allOptions).find(opt => {
+                        return opt.getAttribute('data-value') === hiddenInput.value ||
+                               opt.textContent?.trim() === hiddenInput.value;
+                    });
+                    if (optionWithValue) {
+                        return optionWithValue.textContent?.trim();
+                    }
+                    return hiddenInput.value;
+                }
+            }
+            
+            return null;
+        }
+        
+        // Function to ensure selected values are always visible - AGGRESSIVE FIX
+        function ensureSelectboxValuesVisible() {
+            // Find ALL selectboxes
+            const selectboxes = document.querySelectorAll('[data-baseweb="select"], .stSelectbox [data-baseweb="select"]');
+            
+            selectboxes.forEach(selectbox => {
+                // First, try to get the selected option text directly from the dropdown
+                let selectedValue = getSelectedOptionText(selectbox);
+                // If we didn't get it from the dropdown, try other methods
+                if (!selectedValue) {
+                    // Try to get the widget key/ID from the selectbox
+                    const widgetKey = selectbox.closest('.stSelectbox')?.getAttribute('data-widget-key') || 
+                                     selectbox.getAttribute('data-widget-key') ||
+                                     selectbox.closest('[data-widget-key]')?.getAttribute('data-widget-key');
+                    
+                    // Try to get value from Streamlit state
+                    if (widgetKey) {
+                        selectedValue = getStreamlitWidgetValue(widgetKey);
+                    }
+                    
+                    // Also try to find the value in the DOM - check for hidden inputs
+                    const valueInput = selectbox.querySelector('input[type="hidden"], input[value], input[name*="selectbox"]');
+                    if (valueInput && valueInput.value) {
+                        selectedValue = valueInput.value;
+                    }
+                    
+                    // Last resort: check if there's any visible text that's not an arrow
+                    const allText = selectbox.textContent || '';
+                    const textParts = allText.split(/[▼▲]/).filter(t => t.trim());
+                    if (textParts.length > 0 && !selectedValue) {
+                        const candidate = textParts[0].trim();
+                        if (candidate && candidate.length > 0) {
+                            selectedValue = candidate;
+                        }
+                    }
+                }
+                // Force ALL elements inside to be visible
+                const allElements = selectbox.querySelectorAll('*');
+                allElements.forEach(el => {
+                    const text = el.textContent?.trim() || '';
+                    // Skip arrow icons, but show everything else
+                    if (text && text !== '▼' && text !== '▲' && text !== '') {
+                        el.style.setProperty('color', '#1f2937', 'important');
+                        el.style.setProperty('opacity', '1', 'important');
+                        el.style.setProperty('visibility', 'visible', 'important');
+                        el.style.setProperty('display', el.tagName === 'SPAN' ? 'inline' : (el.tagName === 'DIV' ? 'flex' : 'block'), 'important');
+                    }
+                });
+                
+                // Find the value display area - try multiple selectors
+                const valueSelectors = [
+                    'div > div',
+                    'div[role="combobox"]',
+                    'div[data-baseweb="select"] > div',
+                    'div > div > div',
+                    'div > div > div > div',
+                    'div[aria-expanded]',
+                    'div[aria-haspopup]'
+                ];
+                
+                valueSelectors.forEach(selector => {
+                    const containers = selectbox.querySelectorAll(selector);
+                    containers.forEach(container => {
+                        container.style.setProperty('color', '#1f2937', 'important');
+                        container.style.setProperty('opacity', '1', 'important');
+                        container.style.setProperty('visibility', 'visible', 'important');
+                        
+                        // Force all children to be visible
+                        const children = container.querySelectorAll('*');
+                        children.forEach(child => {
+                            const childText = child.textContent?.trim() || '';
+                            if (childText && childText !== '▼' && childText !== '▲') {
+                                child.style.setProperty('color', '#1f2937', 'important');
+                                child.style.setProperty('opacity', '1', 'important');
+                                child.style.setProperty('visibility', 'visible', 'important');
+                            }
+                        });
+                    });
+                });
+                
+                // Handle text nodes directly
+                const walker = document.createTreeWalker(
+                    selectbox,
+                    NodeFilter.SHOW_TEXT,
+                    {
+                        acceptNode: function(node) {
+                            const text = node.textContent?.trim() || '';
+                            if (text && text !== '▼' && text !== '▲' && text.length > 0) {
+                                return NodeFilter.FILTER_ACCEPT;
+                            }
+                            return NodeFilter.FILTER_REJECT;
+                        }
+                    },
+                    false
+                );
+                
+                let textNode;
+                while (textNode = walker.nextNode()) {
+                    const parent = textNode.parentElement;
+                    if (parent) {
+                        parent.style.setProperty('color', '#1f2937', 'important');
+                        parent.style.setProperty('opacity', '1', 'important');
+                        parent.style.setProperty('visibility', 'visible', 'important');
+                        
+                        // If it's a bare text node, wrap it
+                        if (textNode.parentNode === selectbox || textNode.parentNode.nodeName === 'DIV') {
+                            const span = document.createElement('span');
+                            span.textContent = textNode.textContent;
+                            span.style.setProperty('color', '#1f2937', 'important');
+                            span.style.setProperty('opacity', '1', 'important');
+                            span.style.setProperty('visibility', 'visible', 'important');
+                            textNode.parentNode.replaceChild(span, textNode);
+                        }
+                    }
+                }
+                
+                // Find the main display container - try multiple selectors
+                let basewebValue = selectbox.querySelector('[data-baseweb="select"] > div > div');
+                if (!basewebValue) {
+                    // Try alternative selectors
+                    basewebValue = selectbox.querySelector('div > div');
+                    if (!basewebValue) {
+                        basewebValue = selectbox.querySelector('div[role="combobox"]');
+                    }
+                }
+                
+                if (basewebValue) {
+                    basewebValue.style.setProperty('color', '#1f2937', 'important');
+                    basewebValue.style.setProperty('opacity', '1', 'important');
+                    basewebValue.style.setProperty('visibility', 'visible', 'important');
+                    
+                    // Get computed style to check if it's actually visible
+                    const computed = window.getComputedStyle(basewebValue);
+                    if (computed.color === 'rgb(0, 0, 0)' || computed.opacity === '0' || computed.visibility === 'hidden') {
+                        basewebValue.style.setProperty('color', '#1f2937', 'important');
+                        basewebValue.style.setProperty('opacity', '1', 'important');
+                        basewebValue.style.setProperty('visibility', 'visible', 'important');
+                    }
+                    
+                    // Get current displayed text (excluding arrow)
+                    let currentText = basewebValue.textContent?.trim() || '';
+                    // Remove arrow characters
+                    currentText = currentText.replace(/[▼▲]/g, '').trim();
+                    const isEmpty = !currentText || currentText === '';
+                    
+                    // Always update if we have a selectedValue and it's different or empty
+                    if (selectedValue && (isEmpty || currentText !== selectedValue)) {
+                        // Find and preserve the arrow icon
+                        const arrow = basewebValue.querySelector('svg, [aria-label*="arrow"], [aria-label*="chevron"], path[d*="M"]');
+                        let arrowHTML = '';
+                        if (arrow) {
+                            arrowHTML = arrow.outerHTML;
+                        }
+                        
+                        // Clear and rebuild
+                        basewebValue.innerHTML = '';
+                        
+                        // Add the selected value text FIRST
+                        const valueSpan = document.createElement('span');
+                        valueSpan.textContent = selectedValue;
+                        valueSpan.style.cssText = 'color: #1f2937 !important; opacity: 1 !important; visibility: visible !important; display: inline-block !important; font-size: 1rem !important; font-weight: 500 !important; margin-right: 8px !important; line-height: 1.5 !important; white-space: nowrap !important;';
+                        basewebValue.appendChild(valueSpan);
+                        
+                        // Then add arrow if it exists
+                        if (arrowHTML) {
+                            basewebValue.insertAdjacentHTML('beforeend', arrowHTML);
+                        }
+                    } else if (!selectedValue && isEmpty) {
+                        // Even if no selectedValue found, try to find it from the selectbox structure
+                        const selectElement = selectbox.querySelector('select');
+                        if (selectElement && selectElement.selectedIndex >= 0) {
+                            const selectedOption = selectElement.options[selectElement.selectedIndex];
+                            if (selectedOption && selectedOption.text) {
+                                const valueSpan = document.createElement('span');
+                                valueSpan.textContent = selectedOption.text;
+                                valueSpan.style.cssText = 'color: #1f2937 !important; opacity: 1 !important; visibility: visible !important; display: inline-block !important; font-size: 1rem !important; font-weight: 500 !important; margin-right: 8px !important;';
+                                basewebValue.insertBefore(valueSpan, basewebValue.firstChild);
+                            }
+                        }
+                    } else if (selectedValue && currentText !== selectedValue) {
+                        // Value exists but doesn't match - update it
+                        const arrow = basewebValue.querySelector('svg, [aria-label*="arrow"], [aria-label*="chevron"]');
+                        const arrowHTML = arrow ? arrow.outerHTML : '';
+                        basewebValue.innerHTML = '';
+                        const valueSpan = document.createElement('span');
+                        valueSpan.textContent = selectedValue;
+                        valueSpan.style.cssText = 'color: #1f2937 !important; opacity: 1 !important; visibility: visible !important; display: inline-block !important; font-size: 1rem !important; font-weight: 500 !important; margin-right: 8px !important;';
+                        basewebValue.appendChild(valueSpan);
+                        if (arrowHTML) {
+                            basewebValue.insertAdjacentHTML('beforeend', arrowHTML);
+                        }
+                    }
+                }
+                
+                // Also try to find and update the main display container
+                const displayContainers = [
+                    selectbox.querySelector('div > div'),
+                    selectbox.querySelector('div[role="combobox"]'),
+                    selectbox.querySelector('div[role="combobox"] > div'),
+                    selectbox.closest('.stSelectbox')?.querySelector('div > div > div')
+                ].filter(Boolean);
+                
+                displayContainers.forEach(container => {
+                    if (selectedValue && (!container.textContent || container.textContent.trim() === '' || container.textContent.trim() === '▼')) {
+                        // Check if there's an arrow/svg to preserve
+                        const arrow = container.querySelector('svg, [aria-label*="arrow"], [aria-label*="chevron"]');
+                        const existingText = container.textContent?.trim();
+                        
+                        if (!existingText || existingText === '▼' || existingText === '▲') {
+                            // Clear and add value
+                            container.innerHTML = '';
+                            if (arrow) {
+                                container.appendChild(arrow);
+                            }
+                            
+                            const valueSpan = document.createElement('span');
+                            valueSpan.textContent = selectedValue;
+                            valueSpan.style.cssText = 'color: #1f2937 !important; opacity: 1 !important; visibility: visible !important; display: inline-block !important; font-size: 1rem !important; font-weight: 500 !important; margin-right: 8px !important;';
+                            container.insertBefore(valueSpan, arrow || null);
+                        }
+                    }
+                    
+                    // Force visibility
+                    container.style.setProperty('color', '#1f2937', 'important');
+                    container.style.setProperty('opacity', '1', 'important');
+                    container.style.setProperty('visibility', 'visible', 'important');
+                });
+            });
+        }
+        
         // Run on load and periodically
         fixDropdownZIndex();
-        setTimeout(fixDropdownZIndex, 500);
-        setTimeout(fixDropdownZIndex, 1000);
+        ensureSelectboxValuesVisible();
+        setTimeout(() => {
+            fixDropdownZIndex();
+            ensureSelectboxValuesVisible();
+        }, 500);
+        setTimeout(() => {
+            fixDropdownZIndex();
+            ensureSelectboxValuesVisible();
+        }, 1000);
         
-        // Watch for new dropdowns being created
+        // Also run after any DOM changes - VERY frequently to catch all updates
+        setInterval(() => {
+            ensureSelectboxValuesVisible();
+        }, 100);
+        
+        // Also run when Streamlit components are ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                setTimeout(ensureSelectboxValuesVisible, 100);
+                setTimeout(ensureSelectboxValuesVisible, 500);
+                setTimeout(ensureSelectboxValuesVisible, 1000);
+            });
+        } else {
+            setTimeout(ensureSelectboxValuesVisible, 100);
+            setTimeout(ensureSelectboxValuesVisible, 500);
+            setTimeout(ensureSelectboxValuesVisible, 1000);
+        }
+        
+        // Run on focus events (when user interacts with selectbox)
+        document.addEventListener('focus', (e) => {
+            if (e.target.closest('[data-baseweb="select"]') || e.target.closest('.stSelectbox')) {
+                setTimeout(ensureSelectboxValuesVisible, 50);
+            }
+        }, true);
+        
+        // Run on blur events (after selection)
+        document.addEventListener('blur', (e) => {
+            if (e.target.closest('[data-baseweb="select"]') || e.target.closest('.stSelectbox')) {
+                setTimeout(ensureSelectboxValuesVisible, 100);
+            }
+        }, true);
+        
+        // Run immediately when page becomes visible
+        document.addEventListener('visibilitychange', () => {
+            if (!document.hidden) {
+                ensureSelectboxValuesVisible();
+            }
+        });
+        
+        // Run on every Streamlit rerun (when components update)
+        const originalRerun = window.parent.postMessage;
+        if (window.parent && window.parent.postMessage) {
+            const checkRerun = setInterval(() => {
+                ensureSelectboxValuesVisible();
+            }, 300);
+        }
+        
+        // Watch for new dropdowns being created and value changes
         const observer = new MutationObserver((mutations) => {
             let shouldFix = false;
             mutations.forEach((mutation) => {
@@ -2244,28 +2796,181 @@ st.markdown("""
                         if (node.nodeType === 1) {
                             if (node.hasAttribute && (
                                 node.hasAttribute('data-baseweb') ||
-                                node.querySelector && node.querySelector('[data-baseweb="popover"]')
+                                node.querySelector && node.querySelector('[data-baseweb="popover"]') ||
+                                node.querySelector && node.querySelector('[data-baseweb="select"]')
                             )) {
                                 shouldFix = true;
                             }
                         }
                     });
                 }
+                // Also watch for attribute changes (like when selection changes)
+                if (mutation.type === 'attributes' && (
+                    mutation.attributeName === 'aria-selected' ||
+                    mutation.attributeName === 'value'
+                )) {
+                    shouldFix = true;
+                }
             });
             if (shouldFix) {
-                setTimeout(fixDropdownZIndex, 100);
+                setTimeout(() => {
+                    fixDropdownZIndex();
+                    ensureSelectboxValuesVisible();
+                }, 100);
             }
         });
         
         observer.observe(document.body, {
             childList: true,
-            subtree: true
+            subtree: true,
+            attributes: true,
+            attributeFilter: ['aria-selected', 'value', 'data-baseweb', 'aria-expanded', 'aria-haspopup']
         });
+        
+        // Additional observer specifically for selectbox value changes
+        const valueObserver = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.type === 'childList' || mutation.type === 'characterData') {
+                    const target = mutation.target;
+                    if (target.closest && target.closest('[data-baseweb="select"]')) {
+                        setTimeout(ensureSelectboxValuesVisible, 10);
+                    }
+                }
+            });
+        });
+        
+        // Observe text content changes in selectboxes
+        setTimeout(() => {
+            document.querySelectorAll('[data-baseweb="select"]').forEach(selectbox => {
+                valueObserver.observe(selectbox, {
+                    childList: true,
+                    subtree: true,
+                    characterData: true
+                });
+            });
+        }, 500);
         
         // Also fix on click events (when dropdowns open)
         document.addEventListener('click', function(e) {
-            setTimeout(fixDropdownZIndex, 50);
+            setTimeout(() => {
+                fixDropdownZIndex();
+                ensureSelectboxValuesVisible();
+            }, 50);
         }, true);
+        
+        // Fix on change events (when selections are made)
+        document.addEventListener('change', function(e) {
+            const selectbox = e.target.closest('[data-baseweb="select"]') || e.target.closest('.stSelectbox');
+            if (selectbox) {
+                // Immediately get the selected option text
+                setTimeout(() => {
+                    const selectedText = getSelectedOptionText(selectbox);
+                    if (selectedText) {
+                        const displayEl = selectbox.querySelector('[data-baseweb="select"] > div > div') ||
+                                        selectbox.querySelector('div > div') ||
+                                        selectbox.querySelector('div[role="combobox"]');
+                        if (displayEl) {
+                            const arrow = displayEl.querySelector('svg');
+                            const arrowHTML = arrow ? arrow.outerHTML : '';
+                            displayEl.innerHTML = '';
+                            const valueSpan = document.createElement('span');
+                            valueSpan.textContent = selectedText;
+                            valueSpan.style.cssText = 'color: #1f2937 !important; opacity: 1 !important; visibility: visible !important; display: inline-block !important; font-size: 1rem !important; font-weight: 500 !important; margin-right: 8px !important;';
+                            displayEl.appendChild(valueSpan);
+                            if (arrowHTML) {
+                                displayEl.insertAdjacentHTML('beforeend', arrowHTML);
+                            }
+                        }
+                    }
+                    ensureSelectboxValuesVisible();
+                }, 50);
+            }
+        }, true);
+        
+        // Also listen for click events on dropdown options
+        document.addEventListener('click', function(e) {
+            const option = e.target.closest('[role="option"], li[role="option"], div[role="option"]');
+            if (option) {
+                // User clicked an option, update display after a short delay
+                setTimeout(() => {
+                    const selectbox = option.closest('[data-baseweb="select"]') || 
+                                    document.querySelector('[data-baseweb="select"]');
+                    if (selectbox) {
+                        const selectedText = option.textContent?.trim();
+                        if (selectedText) {
+                            const displayEl = selectbox.querySelector('[data-baseweb="select"] > div > div') ||
+                                            selectbox.querySelector('div > div');
+                            if (displayEl) {
+                                const arrow = displayEl.querySelector('svg');
+                                const arrowHTML = arrow ? arrow.outerHTML : '';
+                                displayEl.innerHTML = '';
+                                const valueSpan = document.createElement('span');
+                                valueSpan.textContent = selectedText;
+                                valueSpan.style.cssText = 'color: #1f2937 !important; opacity: 1 !important; visibility: visible !important; display: inline-block !important; font-size: 1rem !important; font-weight: 500 !important; margin-right: 8px !important;';
+                                displayEl.appendChild(valueSpan);
+                                if (arrowHTML) {
+                                    displayEl.insertAdjacentHTML('beforeend', arrowHTML);
+                                }
+                            }
+                        }
+                        ensureSelectboxValuesVisible();
+                    }
+                }, 100);
+            }
+        }, true);
+        
+        // Also listen for Streamlit's custom events
+        window.addEventListener('message', (event) => {
+            if (event.data && (event.data.type === 'streamlit:rerun' || event.data.type === 'streamlit:render')) {
+                setTimeout(ensureSelectboxValuesVisible, 100);
+                setTimeout(ensureSelectboxValuesVisible, 300);
+                setTimeout(ensureSelectboxValuesVisible, 600);
+            }
+        });
+        
+        // Listen for iframe messages (Streamlit communication)
+        if (window.parent !== window) {
+            window.parent.addEventListener('message', (event) => {
+                if (event.data && (event.data.type === 'streamlit:rerun' || event.data.type === 'streamlit:render')) {
+                    setTimeout(ensureSelectboxValuesVisible, 100);
+                    setTimeout(ensureSelectboxValuesVisible, 300);
+                }
+            });
+        }
+        
+        // Hook into Streamlit's rerun if possible
+        if (window.streamlit && window.streamlit.setComponentValue) {
+            const originalSetComponentValue = window.streamlit.setComponentValue;
+            window.streamlit.setComponentValue = function(...args) {
+                const result = originalSetComponentValue.apply(this, args);
+                setTimeout(ensureSelectboxValuesVisible, 50);
+                return result;
+            };
+        }
+        
+        // Watch for attribute changes on selectboxes (when value changes)
+        const selectObserver = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.type === 'attributes' || mutation.type === 'childList') {
+                    const target = mutation.target;
+                    if (target.closest && (target.closest('[data-baseweb="select"]') || target.closest('.stSelectbox'))) {
+                        setTimeout(ensureSelectboxValuesVisible, 50);
+                    }
+                }
+            });
+        });
+        
+        // Observe all selectboxes
+        setTimeout(() => {
+            document.querySelectorAll('[data-baseweb="select"], .stSelectbox').forEach(selectbox => {
+                selectObserver.observe(selectbox, {
+                    attributes: true,
+                    childList: true,
+                    subtree: true,
+                    attributeFilter: ['aria-selected', 'value', 'data-baseweb', 'aria-expanded']
+                });
+            });
+        }, 1000);
         
         // REMOVED AGGRESSIVE TEXT HOVER - Using CSS-only for better performance
         // No JavaScript hover effects to prevent jittering
@@ -4350,13 +5055,13 @@ with tab3:
     col_comp1, col_comp2, col_comp3 = st.columns(3)
     
     with col_comp1:
-        crop1 = st.selectbox("🌾 Crop 1", options=[""] + list(CROP_INFO.keys()), format_func=lambda x: CROP_INFO.get(x, {}).get("displayName", x) if x else "Select Crop")
+        crop1 = st.selectbox("🌾 Crop 1", options=[""] + list(CROP_INFO.keys()), format_func=lambda x: CROP_INFO.get(x, {}).get("displayName", x) if x else "Select Crop", key="comp_crop1")
     
     with col_comp2:
-        crop2 = st.selectbox("🌾 Crop 2", options=[""] + list(CROP_INFO.keys()), format_func=lambda x: CROP_INFO.get(x, {}).get("displayName", x) if x else "Select Crop")
+        crop2 = st.selectbox("🌾 Crop 2", options=[""] + list(CROP_INFO.keys()), format_func=lambda x: CROP_INFO.get(x, {}).get("displayName", x) if x else "Select Crop", key="comp_crop2")
     
     with col_comp3:
-        crop3 = st.selectbox("🌾 Crop 3", options=[""] + list(CROP_INFO.keys()), format_func=lambda x: CROP_INFO.get(x, {}).get("displayName", x) if x else "Select Crop")
+        crop3 = st.selectbox("🌾 Crop 3", options=[""] + list(CROP_INFO.keys()), format_func=lambda x: CROP_INFO.get(x, {}).get("displayName", x) if x else "Select Crop", key="comp_crop3")
     
     selected_crops = [c for c in [crop1, crop2, crop3] if c]
     
@@ -4733,15 +5438,24 @@ with tab3:
                     max_val = max(values_max) if values_max else 100
                     normalized_avg = [((min_v + max_v) / 2) / max_val * 100 for min_v, max_v in zip(values_min, values_max)]
                     
+                    # Convert hex color to rgba format
+                    hex_color = colors_list[idx % len(colors_list)]
+                    # Remove # and convert to RGB values
+                    hex_clean = hex_color.lstrip('#')
+                    r = int(hex_clean[0:2], 16)
+                    g = int(hex_clean[2:4], 16)
+                    b = int(hex_clean[4:6], 16)
+                    rgba_color = f'rgba({r}, {g}, {b}, 0.3)'
+                    
                     fig_radar.add_trace(go.Scatterpolar(
                         r=normalized_avg,
                         theta=params,
                         fill='toself',
                         name=info.get("displayName", crop),
-                        line_color=colors_list[idx % len(colors_list)],
-                        fillcolor=colors_list[idx % len(colors_list)].replace('#', 'rgba(').replace('', '') + ', 0.3)',
+                        line_color=hex_color,
+                        fillcolor=rgba_color,
                         line_width=3,
-                        marker=dict(size=10, color=colors_list[idx % len(colors_list)])
+                        marker=dict(size=10, color=hex_color)
                     ))
                 
                 fig_radar.update_layout(
